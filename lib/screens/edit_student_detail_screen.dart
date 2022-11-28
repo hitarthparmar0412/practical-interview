@@ -137,7 +137,6 @@ class _EditStudentProfileScreenState extends State<EditStudentProfileScreen> {
                                           ),
                                         );
                                       }
-
                                       return SizedBox(
                                         height: 100,
                                         width: 100,
