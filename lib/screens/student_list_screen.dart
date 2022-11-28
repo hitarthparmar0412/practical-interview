@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:practical_ahmd/screens/edit_student_detail_screen.dart';
 import 'package:practical_ahmd/widgets/student_list_item_view.dart';
 
 class StudentListScreen extends StatefulWidget {
@@ -23,13 +24,27 @@ class _StudentListScreenState extends State<StudentListScreen> {
         itemCount: 10,
         separatorBuilder: ((context, index) => const SizedBox(height: 10)),
         itemBuilder: ((context, index) => StudentItemview(
+              onEdit: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: ((context) => const EditStudentProfileScreen(
+                          isEditPage: true,
+                          studentName: 'Hitarth',
+                          subjectA: '454',
+                          subjectB: '22',
+                          subjectC: '23',
+                        )),
+                  ),
+                );
+              },
               studentName: 'Hitarth',
               subjectBMarks: '4545',
-              onTap: () {},
+              subjectCMarks: '22',
+              onDelete: () {},
               subjectAMarks: '151521',
               url:
                   'https://images.unsplash.com/photo-1660798027105-5da8ad164e27?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8c3R1ZGVudHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60',
-            
             )),
       ),
     );

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:practical_ahmd/database_methods/database_methods.dart';
+import 'package:practical_ahmd/screens/edit_student_detail_screen.dart';
 import 'package:practical_ahmd/screens/student_list_screen.dart';
 import 'package:practical_ahmd/utility/utility.dart';
 
