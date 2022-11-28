@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:practical_ahmd/utility/utility.dart';
+import 'package:practical_ahmd/widgets/app_text_field.dart';
 import 'package:practical_ahmd/widgets/comman_button_widget.dart';
 
 // import 'package:yousearch/widgets/text_field_widget.dart';
@@ -170,25 +171,26 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                       ),
                     ),
                   ),
-                  // AppTextField(
-                  //   onChanged: (value) {},
-                  //   controller: fullNameController,
-                  //   hintText: context.l10n.enterFullName,
-                  //   validator: (value) {
-                  //     if (value == null || value.isEmpty) {
-                  //       return context.l10n.fullName;
-                  //     }
-                  //     return null;
-                  //   },
-                  //   labelText: context.l10n.fullName,
-                  //   labelStyle: TextStyle(color: AppColors.grey2),
-                  //   customBorder: InputBorder.none,
-                  //   textInputAction: TextInputAction.next,
-                  //   suffix: const Icon(
-                  //     Icons.edit,
-                  //     size: 15,
-                  //   ),
-                  // ),
+                  AppTextField(
+                    onChanged: (value) {},
+                    controller: fullNameController,
+                    hintText: 'Enter name',
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return 'Please enter full name';
+                      }
+                      return null;
+                    },
+                    labelText: 'Full name',
+                    labelStyle: const TextStyle(color: Colors.grey),
+                    customBorder: InputBorder.none,
+                    textInputAction: TextInputAction.next,
+                    suffix: const Icon(
+                      Icons.edit,
+                      size: 15,
+                    ),
+                  ),
+
                   const Divider(
                     height: 7,
                     thickness: 3,
