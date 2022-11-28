@@ -32,4 +32,25 @@ class DatabaseMethods {
       log(e.toString());
     });
   }
+
+  static Future<void> updateStudent({
+    required Map<String, dynamic> data,
+    required String collection,
+    required String username,
+  }) async {
+    await FirebaseFirestore.instance
+        .collection(collection)
+        .doc()
+        .collection('subcollection')
+        .doc()
+        .update({
+      "name": "",
+      "maths": "",
+      "image": "",
+      "science": "",
+      "history": "",
+    }).catchError((e) {
+      log(e.toString());
+    });
+  }
 }
