@@ -21,11 +21,7 @@ class DatabaseMethods {
     required Student data,
     required String collection,
   }) async {
-    await FirebaseFirestore.instance
-        .collection(collection)
-        .doc()
-        .collection('subcollection')
-        .add({
+    await FirebaseFirestore.instance.collection(collection).add({
       "name": data.name,
       "maths": data.maths,
       "image": data.image,
@@ -41,12 +37,7 @@ class DatabaseMethods {
     required String collection,
     required String username,
   }) async {
-    await FirebaseFirestore.instance
-        .collection(collection)
-        .doc()
-        .collection('subcollection')
-        .doc()
-        .update({
+    await FirebaseFirestore.instance.collection(collection).doc().update({
       "name": data.name,
       "maths": data.maths,
       "image": data.image,
