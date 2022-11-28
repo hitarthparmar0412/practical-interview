@@ -2,6 +2,12 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 class Utility {
+  static Widget progress() {
+    return const Center(
+      child: CircularProgressIndicator(color: Colors.blue),
+    );
+  }
+
   static Widget imageLoader(
       {required String url,
       required String placeholder,
