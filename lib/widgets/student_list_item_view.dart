@@ -8,13 +8,15 @@ class StudentItemview extends StatelessWidget {
     required this.studentName,
     required this.subjectAMarks,
     required this.subjectBMarks,
-    required this.onTap,
+    required this.onDelete,
+    required this.onEdit,
     required this.url,
   });
   final String studentName;
   final String subjectAMarks;
   final String subjectBMarks;
-  final Function() onTap;
+  final Function() onDelete;
+  final Function() onEdit;
   final String url;
 
   @override
@@ -172,7 +174,7 @@ class StudentItemview extends StatelessWidget {
                               vertical: 10,
                             ),
                             padding: EdgeInsets.zero,
-                            onTap: onTap,
+                            onTap: onEdit,
                             text: 'Edit',
                             buttonColor: Colors.blue,
                           ),
@@ -183,7 +185,7 @@ class StudentItemview extends StatelessWidget {
                             innerPaddding: const EdgeInsets.symmetric(
                                 horizontal: 20, vertical: 10),
                             padding: EdgeInsets.zero,
-                            onTap: onTap,
+                            onTap: onDelete,
                             text: 'Delete',
                             buttonColor: Colors.blue,
                           ),
