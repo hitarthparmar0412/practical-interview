@@ -26,13 +26,21 @@ class _StudentListScreenState extends State<StudentListScreen> {
         itemBuilder: ((context, index) => StudentItemview(
               onEdit: () {
                 Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: ((context) =>
-                            const EditStudentProfileScreen())));
+                  context,
+                  MaterialPageRoute(
+                    builder: ((context) => const EditStudentProfileScreen(
+                          isEditPage: true,
+                          studentName: 'Hitarth',
+                          subjectA: '454',
+                          subjectB: '22',
+                          subjectC: '23',
+                        )),
+                  ),
+                );
               },
               studentName: 'Hitarth',
               subjectBMarks: '4545',
+              subjectCMarks: '22',
               onDelete: () {},
               subjectAMarks: '151521',
               url:

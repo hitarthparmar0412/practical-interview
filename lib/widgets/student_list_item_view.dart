@@ -11,10 +11,12 @@ class StudentItemview extends StatelessWidget {
     required this.onDelete,
     required this.onEdit,
     required this.url,
+    required this.subjectCMarks,
   });
   final String studentName;
   final String subjectAMarks;
   final String subjectBMarks;
+  final String subjectCMarks;
   final Function() onDelete;
   final Function() onEdit;
   final String url;
@@ -153,7 +155,7 @@ class StudentItemview extends StatelessWidget {
                             ),
                           ),
                           TextSpan(
-                            text: subjectBMarks,
+                            text: subjectCMarks,
                             style: const TextStyle(
                               color: Colors.blue,
                               fontSize: 16,

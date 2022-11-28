@@ -9,8 +9,19 @@ import 'package:practical_ahmd/widgets/comman_button_widget.dart';
 // import 'package:yousearch/widgets/text_field_widget.dart';
 
 class EditStudentProfileScreen extends StatefulWidget {
-  const EditStudentProfileScreen({Key? key}) : super(key: key);
-
+  const EditStudentProfileScreen(
+      {Key? key,
+      this.studentName,
+      this.subjectA,
+      this.subjectB,
+      this.subjectC,
+      this.isEditPage = false})
+      : super(key: key);
+  final bool isEditPage;
+  final String? studentName;
+  final String? subjectA;
+  final String? subjectB;
+  final String? subjectC;
   @override
   State<EditStudentProfileScreen> createState() =>
       _EditStudentProfileScreenState();
@@ -18,6 +29,7 @@ class EditStudentProfileScreen extends StatefulWidget {
 
 class _EditStudentProfileScreenState extends State<EditStudentProfileScreen> {
   final _formKey = GlobalKey<FormState>();
+
   final fullNameController = TextEditingController();
   final subjectAController = TextEditingController();
   final subjectBController = TextEditingController();
@@ -34,6 +46,16 @@ class _EditStudentProfileScreenState extends State<EditStudentProfileScreen> {
   @override
   void initState() {
     super.initState();
+    if (widget.isEditPage &&
+        widget.studentName != null &&
+        widget.subjectA != null &&
+        widget.subjectB != null &&
+        widget.subjectC != null) {
+      fullNameController.text = widget.studentName!;
+      subjectAController.text = widget.subjectA!;
+      subjectBController.text = widget.subjectB!;
+      subjectCController.text = widget.subjectC!;
+    }
   }
 
   notify() {
