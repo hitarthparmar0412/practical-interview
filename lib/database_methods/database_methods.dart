@@ -1,5 +1,8 @@
 import 'dart:developer';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:practical_ahmd/widgets/student_list_item_view.dart';
+
+import '../model/student_model.dart';
 
 class DatabaseMethods {
   static Stream<QuerySnapshot<Map<String, dynamic>>> getStudent({
@@ -15,7 +18,7 @@ class DatabaseMethods {
   }
 
   static Future<void> uploadStudent({
-    required Map<String, dynamic> data,
+    required Student data,
     required String collection,
   }) async {
     await FirebaseFirestore.instance
@@ -23,18 +26,18 @@ class DatabaseMethods {
         .doc()
         .collection('subcollection')
         .add({
-      "name": "",
-      "maths": "",
-      "image": "",
-      "science": "",
-      "history": "",
+      "name": data.name,
+      "maths": data.maths,
+      "image": data.image,
+      "science": data.science,
+      "history": data.history,
     }).catchError((e) {
       log(e.toString());
     });
   }
 
   static Future<void> updateStudent({
-    required Map<String, dynamic> data,
+    required Student data,
     required String collection,
     required String username,
   }) async {
@@ -44,11 +47,11 @@ class DatabaseMethods {
         .collection('subcollection')
         .doc()
         .update({
-      "name": "",
-      "maths": "",
-      "image": "",
-      "science": "",
-      "history": "",
+      "name": data.name,
+      "maths": data.maths,
+      "image": data.image,
+      "science": data.science,
+      "history": data.history,
     }).catchError((e) {
       log(e.toString());
     });
