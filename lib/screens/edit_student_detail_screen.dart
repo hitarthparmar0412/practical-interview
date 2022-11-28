@@ -18,17 +18,14 @@ class EditProfileScreen extends StatefulWidget {
 class _EditProfileScreenState extends State<EditProfileScreen> {
   final _formKey = GlobalKey<FormState>();
   final fullNameController = TextEditingController();
-  final userNameController = TextEditingController();
-  final dateController = TextEditingController();
-  final phoneNumberController = TextEditingController();
-  final emailController = TextEditingController();
-  final positionController = TextEditingController();
-  final descriptionController = TextEditingController();
+  final subjectAController = TextEditingController();
+  final subjectBController = TextEditingController();
+  final subjectCController = TextEditingController();
 
   final ImagePicker _picker = ImagePicker();
   bool status = false;
   bool switchValue = false;
-  String? selectedGender;
+
   ValueNotifier<bool> isLoading = ValueNotifier<bool>(false);
   ValueNotifier<String?> profileImage = ValueNotifier<String?>('');
   ValueNotifier<File?> profileImageFile = ValueNotifier<File?>(null);
@@ -156,6 +153,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                     ),
                   ),
                   Container(
+                    width: MediaQuery.of(context).size.width,
                     color: Colors.grey[200],
                     child: const Padding(
                       padding: EdgeInsets.symmetric(
@@ -190,203 +188,93 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                       size: 15,
                     ),
                   ),
-
                   const Divider(
                     height: 7,
                     thickness: 3,
                     color: Colors.grey,
                   ),
-                  // AppTextField(
-                  //   enabled: !switchValue,
-                  //   textColor: switchValue ? AppColors.red : AppColors.blue1,
-                  //   onChanged: (value) {},
-                  //   validator: (value) {
-                  //     return null;
-
-                  //     // if (value == null || value.isEmpty) {
-                  //     //   return context.l10n.enterUserName;
-                  //     // }
-                  //     // return null;
-                  //   },
-                  //   padding:
-                  //       const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
-                  //   controller: userNameController,
-                  //   hintText: context.l10n.enterUserName,
-                  //   labelText: context.l10n.username,
-                  //   textInputAction: TextInputAction.next,
-                  //   labelStyle: TextStyle(color: AppColors.grey2),
-                  //   inputTextStyle: TextStyle(
-                  //       color: switchValue ? AppColors.grey2 : AppColors.black),
-                  //   customBorder: InputBorder.none,
-                  //   suffix: !switchValue
-                  //       ? const Icon(
-                  //           Icons.edit,
-                  //           size: 15,
-                  //         )
-                  //       : null,
-                  // ),
+                  AppTextField(
+                    textColor: Colors.grey,
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return 'Please enter subject a marks';
+                      }
+                      return null;
+                    },
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
+                    controller: subjectAController,
+                    hintText: 'Enter subject A marks',
+                    labelText: 'Subject A',
+                    textInputAction: TextInputAction.next,
+                    labelStyle: const TextStyle(color: Colors.grey),
+                    inputTextStyle: const TextStyle(color: Colors.grey),
+                    customBorder: InputBorder.none,
+                    suffix: const Icon(
+                      Icons.edit,
+                      size: 15,
+                    ),
+                  ),
                   const Divider(
                     height: 7,
                     thickness: 3,
                     color: Colors.grey,
                   ),
-                  // AppTextField(
-                  //   labelStyle: TextStyle(color: AppColors.grey2),
-                  //   onChanged: (value) {},
-                  //   enabled: false,
-                  //   onTap: () {
-                  //     Utility.openDatePicker(
-                  //       context: context,
-                  //       onSelect: (date) {
-                  //         dateController.text = date.toString();
-                  //         notify();
-                  //       },
-                  //     );
-                  //   },
-                  //   padding:
-                  //       const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
-                  //   controller: dateController,
-                  //   hintText: context.l10n.enterDateOfBirth,
-                  //   labelText: context.l10n.dateOfBirth,
-                  //   textInputAction: TextInputAction.next,
-                  //   customBorder: InputBorder.none,
-                  //   suffix: const Icon(
-                  //     Icons.edit,
-                  //     size: 15,
-                  //   ),
-                  // ),
+                  AppTextField(
+                    textColor: Colors.grey,
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return 'Please enter subject a marks';
+                      }
+                      return null;
+                    },
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
+                    controller: subjectBController,
+                    hintText: 'Enter subject B marks',
+                    labelText: 'Subject B',
+                    textInputAction: TextInputAction.next,
+                    labelStyle: const TextStyle(color: Colors.grey),
+                    inputTextStyle: const TextStyle(color: Colors.grey),
+                    customBorder: InputBorder.none,
+                    suffix: const Icon(
+                      Icons.edit,
+                      size: 15,
+                    ),
+                  ),
                   const Divider(
                     height: 7,
                     thickness: 3,
                     color: Colors.grey,
                   ),
-                  // AppTextField(
-                  //   labelStyle: TextStyle(color: AppColors.grey2),
-                  //   enabled: true,
-                  //   onChanged: (value) {},
-                  //   padding:
-                  //       const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
-                  //   controller: phoneNumberController,
-                  //   hintText: context.l10n.enterPhoneNumber,
-                  //   labelText: context.l10n.phoneNumber,
-                  //   customBorder: InputBorder.none,
-                  //   textInputAction: TextInputAction.next,
-                  //   suffix: const Icon(
-                  //     Icons.edit,
-                  //     size: 15,
-                  //   ),
-                  // ),
+                  AppTextField(
+                    textColor: Colors.grey,
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return 'Please enter subject a marks';
+                      }
+                      return null;
+                    },
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
+                    controller: subjectCController,
+                    hintText: 'Enter subject C marks',
+                    labelText: 'Subject C',
+                    textInputAction: TextInputAction.next,
+                    labelStyle: const TextStyle(color: Colors.grey),
+                    inputTextStyle: const TextStyle(color: Colors.grey),
+                    customBorder: InputBorder.none,
+                    suffix: const Icon(
+                      Icons.edit,
+                      size: 15,
+                      color: Colors.grey,
+                    ),
+                  ),
                   const Divider(
                     height: 7,
                     thickness: 3,
                     color: Colors.grey,
                   ),
-                  // AppTextField(
-                  //   labelStyle: TextStyle(color: AppColors.grey2),
-                  //   onChanged: (value) {},
-                  //   padding:
-                  //       const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
-                  //   controller: emailController,
-                  //   validator: (value) {
-                  //     if (value != null &&
-                  //         value.trim() != '' &&
-                  //         !Utility.isValidEmail(value)) {
-                  //       return context.l10n.enterValidEmail;
-                  //     }
-
-                  //     return null;
-                  //   },
-                  //   hintText: context.l10n.enterEmailAddress,
-                  //   labelText: context.l10n.emailAddress,
-                  //   customBorder: InputBorder.none,
-                  //   textInputAction: TextInputAction.next,
-                  //   suffix: const Icon(
-                  //     Icons.edit,
-                  //     size: 15,
-                  //   ),
-                  // ),
-                  const Divider(
-                    height: 7,
-                    thickness: 3,
-                    color: Colors.grey,
-                  ),
-
-                  // AppTextField(
-                  //   labelStyle: TextStyle(color: AppColors.grey2),
-                  //   onTap: () async {
-                  //     isLoading.value = true;
-                  //     LatLng? mylocation;
-                  //     await Utility.getCurrentLocation((latlng) {
-                  //       mylocation = latlng;
-                  //     }).whenComplete(() {
-                  //       isLoading.value = false;
-                  //     });
-
-                  //     if (mylocation != null && !isLoading.value) {
-                  //       final list = await Navigator.push<List<dynamic>>(
-                  //         context,
-                  //         MaterialPageRoute(
-                  //           builder: (context) => SetYourPositionScreen(
-                  //             isFirstTime: false,
-                  //             currentLatLang: LatLng(
-                  //               mylocation?.latitude ?? 00,
-                  //               mylocation?.longitude ?? 00,
-                  //             ),
-                  //           ),
-                  //         ),
-                  //       );
-                  //       try {
-                  //         GeoData? currentLatLang = list?[0] as GeoData?;
-                  //         if (currentLatLang != null) {
-                  //           mylocation = LatLng(currentLatLang.latitude,
-                  //               currentLatLang.longitude);
-                  //           positionController.text = currentLatLang.address;
-                  //           notify();
-                  //         }
-                  //       } catch (e) {}
-                  //     }
-                  //   },
-                  //   onChanged: (value) {},
-                  //   padding:
-                  //       const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
-                  //   controller: positionController,
-                  //   hintText: context.l10n.enterYourPosition,
-                  //   labelText: context.l10n.position,
-                  //   customBorder: InputBorder.none,
-                  //   textInputAction: TextInputAction.next,
-                  //   suffix: const Icon(
-                  //     Icons.edit,
-                  //     size: 15,
-                  //   ),
-                  // ),
-                  const Divider(
-                    height: 7,
-                    thickness: 3,
-                    color: Colors.grey,
-                  ),
-                  // AppTextField(
-                  //   labelStyle: TextStyle(color: AppColors.grey2),
-                  //   onChanged: (value) {},
-                  //   padding: const EdgeInsets.symmetric(
-                  //     horizontal: 15,
-                  //     vertical: 5,
-                  //   ),
-                  //   controller: descriptionController,
-                  //   validator: (value) {
-                  //     if (value == null || value.isEmpty) {
-                  //       return context.l10n.enterDescription;
-                  //     }
-                  //     return null;
-                  //   },
-                  //   hintText: context.l10n.enterDescription,
-                  //   labelText: context.l10n.description,
-                  //   customBorder: InputBorder.none,
-                  //   textInputAction: TextInputAction.newline,
-                  //   suffix: const Icon(
-                  //     Icons.edit,
-                  //     size: 15,
-                  //   ),
-                  // ),
                   const SizedBox(
                     height: 70,
                   ),
@@ -394,30 +282,23 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
               ),
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.only(
-              left: 20,
-              right: 20,
-              bottom: 10,
-            ),
-            child: CommonButtonWidget(
-              innerPaddding: const EdgeInsets.all(18),
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.black.withOpacity(0.3),
-                  spreadRadius: 5,
-                  blurRadius: 11,
-                  offset: const Offset(0, 5),
-                ),
-              ],
-              text: 'Set',
-              fontSize: 15,
-              onTap: () {
-                if (_formKey.currentState!.validate()) {
-                  // profileApiCall();
-                }
-              },
-            ),
+          CommonButtonWidget(
+            innerPaddding: const EdgeInsets.all(18),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black.withOpacity(0.3),
+                spreadRadius: 5,
+                blurRadius: 11,
+                offset: const Offset(0, 5),
+              ),
+            ],
+            text: 'Set',
+            fontSize: 15,
+            onTap: () {
+              if (_formKey.currentState!.validate()) {
+                // profileApiCall();
+              }
+            },
           ),
           ValueListenableBuilder<bool>(
             builder: (context, value, child) {
