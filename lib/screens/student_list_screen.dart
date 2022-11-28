@@ -28,7 +28,8 @@ class _StudentListScreenState extends State<StudentListScreen> {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: ((context) => const EditProfileScreen())));
+                        builder: ((context) =>
+                            const EditStudentProfileScreen())));
               },
               studentName: 'Hitarth',
               subjectBMarks: '4545',

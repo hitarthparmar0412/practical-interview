@@ -8,14 +8,15 @@ import 'package:practical_ahmd/widgets/comman_button_widget.dart';
 
 // import 'package:yousearch/widgets/text_field_widget.dart';
 
-class EditProfileScreen extends StatefulWidget {
-  const EditProfileScreen({Key? key}) : super(key: key);
+class EditStudentProfileScreen extends StatefulWidget {
+  const EditStudentProfileScreen({Key? key}) : super(key: key);
 
   @override
-  State<EditProfileScreen> createState() => _EditProfileScreenState();
+  State<EditStudentProfileScreen> createState() =>
+      _EditStudentProfileScreenState();
 }
 
-class _EditProfileScreenState extends State<EditProfileScreen> {
+class _EditStudentProfileScreenState extends State<EditStudentProfileScreen> {
   final _formKey = GlobalKey<FormState>();
   final fullNameController = TextEditingController();
   final subjectAController = TextEditingController();

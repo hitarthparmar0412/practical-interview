@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:practical_ahmd/screens/edit_student_detail_screen.dart';
 import 'package:practical_ahmd/screens/student_list_screen.dart';
 
 class HomePage extends StatefulWidget {
@@ -28,7 +29,13 @@ class _HomePageState extends State<HomePage> {
                   color: Colors.blue,
                 ),
                 child: IconButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: ((context) =>
+                                const EditStudentProfileScreen())));
+                  },
                   icon: const Icon(
                     Icons.add,
                     color: Colors.white,
