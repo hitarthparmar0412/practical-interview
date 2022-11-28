@@ -4,7 +4,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 
 class DatabaseMethods {
-  Stream<QuerySnapshot<Map<String, dynamic>>> getDocument({
+  static Stream<QuerySnapshot<Map<String, dynamic>>> getDocument({
     required String collection,
     required String uniqueKey,
   }) {
@@ -16,7 +16,7 @@ class DatabaseMethods {
         .snapshots();
   }
 
-  Stream<QuerySnapshot<Map<String, dynamic>>> getStudent({
+  static Stream<QuerySnapshot<Map<String, dynamic>>> getStudent({
     required String collection,
     required String uniqueKey,
   }) {
@@ -28,14 +28,13 @@ class DatabaseMethods {
         .snapshots();
   }
 
-  Future<void> uploadStudent({
+  static Future<void> uploadStudent({
     required Map<String, dynamic> data,
     required String collection,
-    required String uniqueKey,
   }) async {
     await FirebaseFirestore.instance
         .collection(collection)
-        .doc(uniqueKey)
+        .doc()
         .collection('subcollection')
         .add(data)
         .catchError((e) {
@@ -43,7 +42,7 @@ class DatabaseMethods {
     });
   }
 
-  Stream<QuerySnapshot<Map<String, dynamic>>> getCollection(
+  static Stream<QuerySnapshot<Map<String, dynamic>>> getCollection(
       {required String collection, required String userid}) {
     return FirebaseFirestore.instance
         .collection(collection)
@@ -51,7 +50,7 @@ class DatabaseMethods {
         .snapshots();
   }
 
-  Stream<DocumentSnapshot<Map<String, dynamic>>> getFields({
+  static Stream<DocumentSnapshot<Map<String, dynamic>>> getFields({
     required String collection,
     required String uniqueKey,
   }) {
@@ -61,7 +60,7 @@ class DatabaseMethods {
         .snapshots();
   }
 
-  Future<void> uploadDocument({
+  static Future<void> uploadDocument({
     required Map<String, dynamic> data,
     required String collection,
     required String uniqueKey,

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:practical_ahmd/database_methods/database_methods.dart';
 import 'package:practical_ahmd/screens/student_list_screen.dart';
+import 'package:practical_ahmd/utility/utility.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -28,7 +30,16 @@ class _HomePageState extends State<HomePage> {
                   color: Colors.blue,
                 ),
                 child: IconButton(
-                  onPressed: () {},
+                  onPressed: () async {
+                    DatabaseMethods.uploadStudent(
+                      data: {
+                        "data": [
+                          {"userone": "userid"}
+                        ]
+                      },
+                      collection: "users",
+                    );
+                  },
                   icon: const Icon(
                     Icons.add,
                     color: Colors.white,
