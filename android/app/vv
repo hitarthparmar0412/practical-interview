@@ -1,0 +1,39 @@
+{
+    "project_info": {
+      "project_number": "970025936858",
+      "project_id": "practical-interview-54182",
+      "storage_bucket": "practical-interview-54182.appspot.com"
+    },
+    "client": [
+      {
+        "client_info": {
+          "mobilesdk_app_id": "1:970025936858:android:55b4bd26e431138c5dc2e3",
+          "android_client_info": {
+            "package_name": "com.example.practical_ahmd"
+          }
+        },
+        "oauth_client": [
+          {
+            "client_id": "970025936858-nau9ckq9dnei3a01dsfslmdj45pu4uuc.apps.googleusercontent.com",
+            "client_type": 3
+          }
+        ],
+        "api_key": [
+          {
+            "current_key": "AIzaSyBAa37n6idvf35d0mIV86Dx9nBerxFL6dY"
+          }
+        ],
+        "services": {
+          "appinvite_service": {
+            "other_platform_oauth_client": [
+              {
+                "client_id": "970025936858-nau9ckq9dnei3a01dsfslmdj45pu4uuc.apps.googleusercontent.com",
+                "client_type": 3
+              }
+            ]
+          }
+        }
+      }
+    ],
+    "configuration_version": "1"
+  }
