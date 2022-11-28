@@ -1,7 +1,5 @@
 import 'dart:developer';
-import 'dart:io';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_storage/firebase_storage.dart';
 
 class DatabaseMethods {
   static Stream<QuerySnapshot<Map<String, dynamic>>> getStudent({
@@ -24,8 +22,13 @@ class DatabaseMethods {
         .collection(collection)
         .doc()
         .collection('subcollection')
-        .add(data)
-        .catchError((e) {
+        .add({
+      "name": "",
+      "maths": "",
+      "image": "",
+      "science": "",
+      "history": "",
+    }).catchError((e) {
       log(e.toString());
     });
   }

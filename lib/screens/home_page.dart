@@ -32,8 +32,12 @@ class _HomePageState extends State<HomePage> {
                 ),
                 child: IconButton(
                   onPressed: () {
-                    DatabaseMethods.uploadStudent(
-                        data: {"data": "data"}, collection: "students");
+                    DatabaseMethods.uploadStudent(data: {
+                      "data": "data",
+                      "maths": 25,
+                      "science": 90,
+                      "physics": 66
+                    }, collection: "students");
                   },
                   icon: const Icon(
                     Icons.add,
