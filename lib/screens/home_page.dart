@@ -31,7 +31,10 @@ class _HomePageState extends State<HomePage> {
                   color: Colors.blue,
                 ),
                 child: IconButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    DatabaseMethods.uploadStudent(
+                        data: {"data": "data"}, collection: "students");
+                  },
                   icon: const Icon(
                     Icons.add,
                     color: Colors.white,
